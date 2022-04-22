@@ -16,7 +16,11 @@ var RoomsView = {
   },
 
   renderRoom: function(roomname) {
-    // TODO: Render out a single room.
+    console.log('roomName:',message.roomname);
+    this.$select.append(_.template(`
+  <div class="chat">
+    <%-message.roomname%>
+  </div>`));
   },
 
   handleChange: function(event) {
