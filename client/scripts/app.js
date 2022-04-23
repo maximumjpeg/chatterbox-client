@@ -25,12 +25,21 @@ var App = {
 
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
+      RoomsView.initialize(data);
       // examine the response from the server request:
       console.log(data);
+      //render messages part
+      //iterate over data
+      for (var message of data) {
+        MessagesView.renderMessage(message);
+      }
+      //render message
 
       // TODO: Use the data to update Messages and Rooms
       // and re-render the corresponding views.
     });
+    //stop spinner
+    callback();
   },
 
   startSpinner: function() {

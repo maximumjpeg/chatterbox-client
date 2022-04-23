@@ -3,6 +3,8 @@
 
 var MessagesView = {
 
+  _selectedRoom: null,
+
   $chats: $('#chats'),
 
   initialize: function() {
@@ -28,8 +30,19 @@ var MessagesView = {
   },
 
   handleClick: function(event) {
+    // console.log('test', event);
+    var text = $("input#message").val();
+    var message = {
+      username : window.location.search,
+      text: text,
+      roomname: roomName
+    }
+
+    Parse.create()
+
     // TODO: handle a user clicking on a message
     // (this should add the sender to the user's friend list).
+
   }
 
 };
