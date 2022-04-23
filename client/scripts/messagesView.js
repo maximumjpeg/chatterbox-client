@@ -17,13 +17,14 @@ var MessagesView = {
   renderMessage: function(message) {
     // TODO: Render a single message.
     //sadfgasdfads
-    this.$chats.append(_.template(`
+    var node = _.template(`
       <div class="chat">
-        <div class="username"><%-message.username%></div>
-        <div><%-message.text%></div>
+        <div class="username"><%- username %></div>
+        <div><%- text %></div>
       </div>
-    `)
-    );
+    `)({username: message.username, text: message.text});
+
+    this.$chats.append(node);
   },
 
   handleClick: function(event) {

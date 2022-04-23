@@ -16,11 +16,13 @@ var RoomsView = {
   },
 
   renderRoom: function(roomname) {
-    console.log('roomName:',message.roomname);
-    this.$select.append(_.template(`
-  <div class="chat">
-    <%-message.roomname%>
-  </div>`));
+
+    var node = _.template(`
+    <option value=\"<%-roomname%>\" >
+      <%-roomname%>
+    </option>`)({roomname: roomname});
+    console.log(node);
+    this.$select.append(node);
   },
 
   handleChange: function(event) {

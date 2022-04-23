@@ -5,9 +5,13 @@
 var Friends = {
   // TODO: Define how you want to store your list of friends.
 
-  _data: [],
+  _data: {
+    //name: false,
+    //otherName: true
+  },
 
   // TODO: Define methods which allow you to add, toggle,
   // and check the friendship status of other users.
+  // need a property called toggleStatus (boolean switch)
 
 };
